@@ -22,9 +22,21 @@ class Mesh
          */
         void aff();
 
+        /*
+         *
+         */
+        int getNx();
+
+        /*
+         *
+         */
+        int getNy();
+
 
 
     private :
+        friend class Transport2D;
+
         /* 3 subdivision : 2 en espace et une en temps. Pour chaque subdivision :
          * - début subdivision
          * - fin subdivision
