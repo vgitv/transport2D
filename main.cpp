@@ -26,7 +26,10 @@ int main()
     // partie principale
     // ------------------------------------------------------------------------------------------------------
     equation.init();
+    equation.setFlux(&f);
     equation.aff();
+
+
     equation.plot3D("sorties/u.dat");
 
 
