@@ -20,6 +20,11 @@ class Transport2D
         void init();
 
         /*
+         * Changer de flux.
+         */
+        void setFlux(void (*f) (double, double, double, double[2]));
+
+        /*
          * Affichage informations sur l'objet.
          */
         void aff();
@@ -28,6 +33,11 @@ class Transport2D
          * Enregistrement dans fichier pour gnuplot.
          */
         void plot3D(std::string fichier);
+
+        /*
+         * Flux numérique Lax Friedrichs.
+         */
+        static double fluxLaxFriedrichs(double uk, double ul, double nkl[2]);
 
 
 
@@ -40,6 +50,9 @@ class Transport2D
 
         // solution
         double **m_u;
+
+        // flux du problème
+        void (*m_f) (double, double, double, double[2]);
 };
 
 #endif
