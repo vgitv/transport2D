@@ -1,3 +1,9 @@
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <iomanip>
+#include <limits>
+
 #include "Transport2D.h"
 #include "math.h"
 
@@ -33,6 +39,35 @@ void Transport2D::init()
 
 void Transport2D::aff()
 {
+    // infos sur le maillage
     m_grille.aff();
-    math::affMat(m_grille.m_nx, m_grille.m_ny, m_u);
+
+    // Si la matrice est de taille "raisonnable", on l'affiche.
+    if ((m_grille.m_ny <= 10) && (m_grille.m_nx <= 20))
+    {
+        math::affMat(m_grille.m_nx, m_grille.m_ny, m_u);
+    }
+}
+
+void Transport2D::plot3D(std::string fichier)
+{
+    std::ofstream flux(fichier.c_str());
+    int n = std::numeric_limits<double>::digits10 + 1;
+
+    if (flux)
+    {
+        for (int i = 0; i < m_grille.m_nx; ++i)
+        {
+            for (int j = 0; j < m_grille.m_ny; ++j)
+            {
+                flux << std::setw(22) << std::setprecision(n) << m_grille.m_x[i]
+                    << std::setw(22) << std::setprecision(n) << m_grille.m_y[j]
+                    << std::setw(22) << std::setprecision(n) << m_u[i][j] << std::endl;
+            }
+        }
+    }
+    else
+    {
+        std::cerr << "ERROR fc Transport2D::plot3D" << std::endl;
+    }
 }
