@@ -30,6 +30,7 @@ int main()
     equation.aff();
 
 
+    equation.solve();
     equation.plot3D("sorties/u.dat");
 
 
