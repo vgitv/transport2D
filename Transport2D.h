@@ -37,7 +37,7 @@ class Transport2D
         /*
          * Flux numérique Lax Friedrichs.
          */
-        static double fluxLaxFriedrichs(double x, double y, double uk, double ul, double nkl[2]);
+        double fluxLaxFriedrichs(double x, double y, double uk, double ul, double nkl[2]);
 
 
 

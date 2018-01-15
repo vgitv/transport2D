@@ -83,8 +83,8 @@ double Transport2D::fluxLaxFriedrichs(double x, double y, double uk, double ul, 
     double fuk[2], ful[2];
 
     // calcul des flux
-    //m_f(x, y, uk, fuk);
-    //m_f(x, y, ul, ful);
+    m_f(x, y, uk, fuk);
+    m_f(x, y, ul, ful);
 
-    return 0;
+    return math::dotProd(2, fuk, nkl) + math::dotProd(2, ful, nkl) + (ul - uk) / 2 * lambda;
 }
