@@ -1,7 +1,8 @@
 /* FICHIER CONTENANT LES FONCTIONS :
  *
- * read
  * linspace
+ * dotProd
+ * read
  * affMat
  * affVec
  */
@@ -13,6 +14,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <iomanip>
 
 namespace math
 {
@@ -25,11 +27,6 @@ namespace math
      */
     void linspace(double a, double b, int taille, double vecteur[]);
 
-    /*
-     * Produit scalaire.
-     */
-    double dotProd(int n, double u[], double v[]);
-
 
 
 
@@ -37,6 +34,24 @@ namespace math
     // ======================================================================================================
     // TEMPLATES
     // ======================================================================================================
+
+    /*
+     * Produit scalaire.
+     */
+    template<typename T>
+        T dotProd(int n, T u[], T v[])
+        {
+            T cumul = 0;
+
+            for (int i = 0; i < n; ++i)
+            {
+                cumul += u[i] * v[i];
+            }
+
+            return cumul;
+        }
+
+
 
     // ------------------------------------------------------------------------------------------------------
     // lecture constantes dans un fichier
@@ -77,7 +92,7 @@ namespace math
             {
                 for (int j = 0; j < m; ++j)
                 {
-                    std::cout << mat[i][j] << "  ";
+                    std::cout << std::setw(8) << std::setprecision(5) << mat[i][j] << "  ";
                 }
                 std::cout << std::endl;
             }
