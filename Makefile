@@ -5,9 +5,9 @@
 PROJECT = transport2D
 
 # code
-SOURCES = main.cpp math.cpp vf.cpp donnees.cpp
-HEADERS =          math.h   vf.h   donnees.h
-OBJECTS = main.o   math.o   vf.o   donnees.o
+SOURCES = main.cpp math.cpp Mesh.cpp vf.cpp donnees.cpp
+HEADERS =          math.h   Mesh.h   vf.h   donnees.h
+OBJECTS = main.o   math.o   Mesh.o   vf.o   donnees.o
 
 # compilateur et exécutable
 CC      = g++ -std=c++11
@@ -35,6 +35,9 @@ main.o : main.cpp $(HEADERS)
 # modules
 math.o : math.cpp math.h
 	$(CC) -c math.cpp -o math.o
+
+Mesh.o : Mesh.cpp Mesh.h
+	$(CC) -c Mesh.cpp -o Mesh.o
 
 vf.o : vf.cpp vf.h
 	$(CC) -c vf.cpp -o vf.o
