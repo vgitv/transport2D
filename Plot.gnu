@@ -12,8 +12,8 @@ set grid
 set xlabel "x"
 set ylabel "y"
 set size ratio -1 # repère orthonormé
-set xrange[-2:2]
-set yrange[-1.5:1.5]
+set xrange[0:2]
+set yrange[0:1]
 
 # tracé
 splot "sorties/u.dat"    u 1:2:3 lc rgb "#FF4500" lw 1 title "approximation",\
