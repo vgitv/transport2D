@@ -1,0 +1,11 @@
+# dossier git
+.git/
+
+# fichiers objets
+*.o
+
+# exécutable
+truc
+
+# fichiers vim
+.*.swp
