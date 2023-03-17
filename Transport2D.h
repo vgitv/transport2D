@@ -20,9 +20,14 @@ class Transport2D
         void init();
 
         /*
-         *
+         * Affichage informations sur l'objet.
          */
         void aff();
+
+        /*
+         * Enregistrement dans fichier pour gnuplot.
+         */
+        void plot3D(std::string fichier);
 
 
 
