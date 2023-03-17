@@ -77,9 +77,14 @@ void Transport2D::plot3D(std::string fichier)
     }
 }
 
-double Transport2D::fluxLaxFriedrichs(double uk, double ul, double nkl[2])
+double Transport2D::fluxLaxFriedrichs(double x, double y, double uk, double ul, double nkl[2])
 {
     double lambda = 1;
+    double fuk[2], ful[2];
 
-    return 0;
+    // calcul des flux
+    m_f(x, y, uk, fuk);
+    m_f(x, y, ul, ful);
+
+    return math::dotProd(2, fuk, nkl) + math::dotProd(2, ful, nkl) + (ul - uk) / 2 * lambda;
 }

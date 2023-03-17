@@ -11,4 +11,6 @@ double u0(double x, double y);
  */
 void f(double x, double y, double u, double out[2]);
 
+void truc(double tab[2]);
+
 #endif
