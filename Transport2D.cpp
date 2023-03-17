@@ -37,6 +37,11 @@ void Transport2D::init()
     }
 }
 
+void Transport2D::setFlux(void (*f) (double, double, double, double[2]))
+{
+    m_f = f;
+}
+
 void Transport2D::aff()
 {
     // infos sur le maillage
@@ -70,4 +75,11 @@ void Transport2D::plot3D(std::string fichier)
     {
         std::cerr << "ERROR fc Transport2D::plot3D" << std::endl;
     }
+}
+
+double Transport2D::fluxLaxFriedrichs(double uk, double ul, double nkl[2])
+{
+    double lambda = 1;
+
+    return 0;
 }

@@ -28,28 +28,17 @@ namespace math
 
 
     // ------------------------------------------------------------------------------------------------------
-    // écriture fonction R**2 -> R pour plot 3D
+    // produit scalaire
     // ------------------------------------------------------------------------------------------------------
-    void plot3D(int nx, double x[], int ny, double y[], double **z, std::string fichier)
+    double dotProd(int n, double u[], double v[])
     {
-        std::ofstream flux(fichier.c_str());
+        double cumul = 0;
 
-        if (flux)
+        for (int i = 0; i < n; ++i)
         {
-            //flux << std::setprecision(std::numeric_limits<double>::digits10 + 1) << std::setw(50);
-            flux << std::setw(50);
+            cumul += u[i] * v[i];
+        }
 
-            for (int i = 0; i < ny; ++i)
-            {
-                for (int j = 0; j < nx; ++j)
-                {
-                    flux << x[j] << y[i] << z[j][i] << std::endl;
-                }
-            }
-        }
-        else
-        {
-            std::cerr << "ERROR fc Laplacien1D::write" << std::endl;
-        }
+        return cumul;
     }
 }
