@@ -1,16 +1,35 @@
 #ifndef MESH_H
 #define MESH_H
 
+#include <string>
+
 class Mesh
 {
     public :
+        /*
+         * constructeur et destructeur
+         */
+        Mesh(std::string fichier);
+        ~Mesh();
+
+        /*
+         * Lis les variables d'entrée dans un fichier.
+         */
+        void readVar(std::string fichier);
+
+        /*
+         * Afficher informations sur objet.
+         */
+        void aff();
+
+
 
     private :
-        /* 3 subdivision : 2 en espace et une en temps. Pour chaque :
+        /* 3 subdivision : 2 en espace et une en temps. Pour chaque subdivision :
          * - début subdivision
          * - fin subdivision
          * - nombre de valeurs
-         * - intervalle
+         * - intervalle (déduit des précédents)
          * - subdivision
          */
 

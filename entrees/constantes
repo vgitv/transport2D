@@ -1,14 +1,27 @@
-#a
+#xmin
 0
 
-#b
+#xmax
 1
 
-#tf
-1
-
-#n
+#nx
 10
 
-#m
+
+
+#ymin
+0
+
+#ymax
+2
+
+#ny
 20
+
+
+
+#tmax
+0.5
+
+#nt
+5
