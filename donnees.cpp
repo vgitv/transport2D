@@ -9,6 +9,12 @@ double u0(double x, double y)
 
 void f(double x, double y, double u, double out[2])
 {
-    out[1] = 2 * u;
-    out[2] = -1 * u;
+    out[0] = 2 * u;
+    out[1] = -1 * u;
+}
+
+void truc(double tab[2])
+{
+    tab[0] = 8;
+    tab[1] = 9;
 }
