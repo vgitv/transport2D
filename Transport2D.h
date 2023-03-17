@@ -39,6 +39,11 @@ class Transport2D
          */
         double fluxLaxFriedrichs(double x, double y, double uk, double ul, double nkl[2]);
 
+        /*
+         * Résoud par méthode des volumes finis avec flux lax friedrichs.
+         */
+        void solve();
+
 
 
     private :
