@@ -1,5 +1,3 @@
-#include <string>
-
 #include "Mesh.h"
 #include "math.h"
 
@@ -48,4 +46,14 @@ void Mesh::aff()
     std::cout << "m_x : [" << m_xmin << ", " << m_xmax << "]   m_nx = " << m_nx << std::endl;
     std::cout << "m_y : [" << m_ymin << ", " << m_ymax << "]   m_ny = " << m_ny << std::endl;
     std::cout << "m_t : [" << 0.0    << ", " << m_tmax << "]   m_nt = " << m_nt << std::endl;
+}
+
+int Mesh::getNx()
+{
+    return m_nx;
+}
+
+int Mesh::getNy()
+{
+    return m_ny;
 }
