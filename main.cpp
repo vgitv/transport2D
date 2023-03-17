@@ -32,12 +32,6 @@ int main()
 
     equation.plot3D("sorties/u.dat");
 
-    void (*test) (double[2]) = &truc;
-    double temp[2];
-
-    test(temp);
-    math::affVec(2, temp);
-
 
 
 
